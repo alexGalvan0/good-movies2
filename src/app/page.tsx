@@ -1,7 +1,17 @@
+'use client'
 import Image from "next/image"
 import Link from 'next/link'
 
+import { useState } from'react'
+
 export default function Home() {
+
+const [username, setUsername] = useState<string>('')
+const [password, setPassword] = useState<string>('')
+
+
+
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row gap-x-52  bg-base-300 rounded-2xl">
