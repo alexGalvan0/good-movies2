@@ -5,10 +5,7 @@ type userInputs = {
     inputUserName: string
     inputPassword: string
 }
-
-const
 export const logIn: Function = async ({ inputUserName, inputPassword }: userInputs) => {
-    const router = useRouter()
 
     try {
         const user = axios.post(
@@ -20,7 +17,6 @@ export const logIn: Function = async ({ inputUserName, inputPassword }: userInpu
         );
         const res = await user;
         localStorage.setItem("token", res.data.access);
-        router.push("/profile");
     } catch {
         alert("Wrong username or password");
     }

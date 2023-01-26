@@ -20,9 +20,6 @@ export default function Home() {
     setPassword(e.target.value)
   }
 
-  const handleLogin = () => {
-    const {isLoading, isError, data, error, refetch} = useQuery('login', logIn())
-  }
 
 
   return (
@@ -43,19 +40,19 @@ export default function Home() {
               <label className="label">
                 <span className="label-text">Username</span>
               </label>
-              <input onChange={getPassword} type="text" placeholder="username" className="input input-bordered" />
+              <input onChange={getUserName} value={username} type="text" placeholder="username" className="input input-bordered" />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
-              <input onChange={getUserName} type="text" placeholder="password" className="input input-bordered" />
+              <input onChange={getPassword} value={password} type="text" placeholder="password" className="input input-bordered" />
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
               </label>
             </div>
             <div className="form-control mt-6 gap-2 ">
-              <button className="btn btn-primary">LOGIN</button>
+              <button className="btn btn-primary" onClick={() => logIn(username,password)}>LOGIN</button>
               <Link className="btn btn-secondary" href='/signup'>GET STARTED  - IT'S FREE!</Link>
             </div>
           </div>
