@@ -21,7 +21,7 @@ function NavBar() {
                 <div className="navbar-center">
                     <Link href='/' className="btn btn-ghost normal-case text-xl">GOOD MOVIES</Link>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end pr-10">
                     <ThemeToggle />
                 </div>
             </div>

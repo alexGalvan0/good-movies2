@@ -1,19 +1,28 @@
 'use client'
 import Image from "next/image"
 import Link from 'next/link'
+import { useQuery } from "react-query";
+import { logIn } from "./components/fetching/login"
+import { useState, ChangeEvent } from 'react'
 
-import { useState,ChangeEvent } from'react'
 
 export default function Home() {
 
-// gettting user loggin inormation into state.
-const [username, setUsername] = useState<string>('')
-const [password, setPassword] = useState<string>('')
 
-const getUserName = (e:ChangeEvent<HTMLInputElement>) => {
-  setUsername(e.target.value)
-}
+  // gettting user loggin inormation into state.
+  const [username, setUsername] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
 
+  const getUserName = (e: ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value)
+  }
+  const getPassword = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+  }
+
+  const handleLogin = () => {
+    const {isLoading, isError, data, error, refetch} = useQuery('login', logIn())
+  }
 
 
   return (
@@ -34,13 +43,13 @@ const getUserName = (e:ChangeEvent<HTMLInputElement>) => {
               <label className="label">
                 <span className="label-text">Username</span>
               </label>
-              <input type="text" placeholder="username" className="input input-bordered" />
+              <input onChange={getPassword} type="text" placeholder="username" className="input input-bordered" />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
-              <input type="text" placeholder="password" className="input input-bordered" />
+              <input onChange={getUserName} type="text" placeholder="password" className="input input-bordered" />
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
               </label>
