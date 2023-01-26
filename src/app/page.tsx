@@ -2,7 +2,8 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <div className="hero min-h-screen bg-base-200 flex flex-col justify-center  ">
+
+    <div className="hero min-h-screen bg-base-200 flex flex-col justify-center">
       <Image src='https://freesvg.org/img/Movie-Clapperboard.png' alt='good movie icon' width={200} height={200}></Image>
       <div className="hero-content text-center">
         <div className="max-w-md">
