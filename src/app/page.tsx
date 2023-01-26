@@ -2,13 +2,17 @@
 import Image from "next/image"
 import Link from 'next/link'
 
-import { useState } from'react'
+import { useState,ChangeEvent } from'react'
 
 export default function Home() {
 
+// gettting user loggin inormation into state.
 const [username, setUsername] = useState<string>('')
 const [password, setPassword] = useState<string>('')
 
+const getUserName = (e:ChangeEvent<HTMLInputElement>) => {
+  setUsername(e.target.value)
+}
 
 
 
