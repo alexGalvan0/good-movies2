@@ -1,25 +1,43 @@
 import Image from "next/image"
+import Link from 'next/link'
 
 export default function Home() {
   return (
-
-    <div className="hero min-h-screen bg-base-200 flex flex-col justify-center">
-      <Image src='https://freesvg.org/img/Movie-Clapperboard.png' alt='good movie icon' width={200} height={200}></Image>
-      <div className="hero-content text-center">
-        <div className="max-w-md">
-
-          <h1 className="text-5xl font-bold">GOOD MOVIES</h1>
-          <div>
-            <p>Track films you’ve watched.</p>
-            <p>Save those you want to see.</p>
-            <p>Tell your friends what’s good.</p>
-          </div>
-          <div className="flex flex-col gap-2 items-center pt-2">
-            <button className="btn btn-secondary">GET STARTED — ITS FREE!</button>
-            <button className="btn btn-primary w-fit">Login</button>
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col lg:flex-row gap-x-52  bg-base-300 rounded-2xl">
+        <div className="flex flex-col items-center">
+          <Image src='https://freesvg.org/img/Movie-Clapperboard.png' alt='good movie icon' width={300} height={300}></Image>
+          <h1 className="text-5xl font-bold  text-center">GOOD MOVIES</h1>
+          <ul>
+            <li>Track films you’ve watched.</li>
+            <li>Save those you want to see.</li>
+            <li>Tell your friends what’s good.</li>
+          </ul>
+        </div>
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Username</span>
+              </label>
+              <input type="text" placeholder="username" className="input input-bordered" />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input type="text" placeholder="password" className="input input-bordered" />
+              <label className="label">
+                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+              </label>
+            </div>
+            <div className="form-control mt-6 gap-2 ">
+              <button className="btn btn-primary">LOGIN</button>
+              <Link className="btn btn-secondary" href='/signup'>GET STARTED  - IT'S FREE!</Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
